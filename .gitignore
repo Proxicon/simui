@@ -1,0 +1,25 @@
+# Node.js dependencies
+/node_modules
+/simUI/node_modules/
+
+# Angular build output
+/dist
+
+# Temporary files
+*.tmp
+*.swp
+*.log
+*.bak
+
+# IDE and editor files
+/.idea
+/.vscode
+*.suo
+*.user
+*.sln.ide
+
+# macOS files
+.DS_Store
+
+# End of line normalization
+* text=auto
