@@ -1,20 +1,20 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
   loginForm: FormGroup;
 
   constructor(
-    private formBuilder: FormBuilder,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private formBuilder: FormBuilder
   ) {
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
@@ -22,20 +22,23 @@ export class LoginComponent {
     });
   }
 
-  onSubmit(): void {
-    if (this.loginForm.invalid) {
-      return;
+  onSubmit() {
+    if (this.loginForm.valid) {
+      const { username, password } = this.loginForm.value;
+      this.authService.login(username, password).subscribe(
+        (success) => {
+          if (success) {
+            this.router.navigate(['/devices']);
+          } else {
+            // Display an error message or handle the login failure
+            console.error('Login failed');
+          }
+        },
+        (error) => {
+          // Handle the error
+          console.error('An error occurred during login:', error);
+        }
+      );
     }
-
-    const { username, password } = this.loginForm.value;
-    this.authService.login(username, password).subscribe(
-      () => {
-        this.router.navigate(['/']);
-      },
-      (error) => {
-        console.error('Login error:', error);
-        alert('Login failed. Please check your credentials and try again.');
-      }
-    );
   }
 }

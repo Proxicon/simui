@@ -495,4 +495,11 @@
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<router-outlet></router-outlet>
+<div *ngIf="isLoggedIn">
+  <app-side-menu></app-side-menu>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<app-login *ngIf="!isLoggedIn"></app-login>
