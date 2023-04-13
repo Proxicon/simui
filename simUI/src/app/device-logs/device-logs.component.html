@@ -1,1 +1,26 @@
-<p>device-logs works!</p>
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <h2>Device Logs</h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Device ID</th>
+              <th>Timestamp</th>
+              <th>Log Level</th>
+              <th>Message</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let logItem of deviceLogs">
+              <td>{{ logItem.deviceId }}</td>
+              <td>{{ logItem.timestamp | date:'short' }}</td>
+              <td>{{ logItem.logLevel }}</td>
+              <td>{{ logItem.message }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

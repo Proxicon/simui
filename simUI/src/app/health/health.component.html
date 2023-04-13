@@ -1,1 +1,24 @@
-<p>health works!</p>
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <h2>Health Data</h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Device ID</th>
+              <th>Status</th>
+              <th>Last Check</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let healthItem of healthData">
+              <td>{{ healthItem.deviceId }}</td>
+              <td>{{ healthItem.status }}</td>
+              <td>{{ healthItem.lastCheck | date:'short' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

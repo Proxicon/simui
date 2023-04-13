@@ -1,1 +1,26 @@
-<p>devices works!</p>
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <h2>Devices</h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Device Type</th>
+              <th>Configuration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let device of devices">
+              <td>{{ device.id }}</td>
+              <td>{{ device.name }}</td>
+              <td>{{ device.deviceType }}</td>
+              <td>{{ device.configuration | json }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

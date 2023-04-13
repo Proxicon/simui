@@ -1,1 +1,23 @@
-<p>device-map works!</p>
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <h2>Device Map</h2>
+        <mgl-map
+          [style]="'mapbox://styles/mapbox/streets-v11'"
+          [zoom]="[3]"
+          [center]="[0, 20]"
+          [containerStyle]="{height: '500px'}"
+        >
+          <mgl-marker
+            *ngFor="let device of devices"
+            [lngLat]="[device.longitude, device.latitude]"
+          >
+            <div class="marker">
+              {{ device.name }}
+            </div>
+          </mgl-marker>
+        </mgl-map>
+      </div>
+    </div>
+  </div>
+  

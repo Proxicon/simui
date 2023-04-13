@@ -1,1 +1,25 @@
 <p>device-data works!</p>
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <h2>Device Data</h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Device ID</th>
+              <th>Timestamp</th>
+              <th>Data</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let dataItem of deviceData">
+              <td>{{ dataItem.deviceId }}</td>
+              <td>{{ dataItem.timestamp | date:'short' }}</td>
+              <td>{{ dataItem.data | json }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

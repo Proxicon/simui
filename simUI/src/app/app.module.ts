@@ -13,6 +13,7 @@ import { DeviceMapComponent } from './device-map/device-map.component';
 
 import { LoginComponent } from './login/login.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
+import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,12 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    // Add the NgxMapboxGLModule to the imports array
+    NgxMapboxGLModule.forRoot({
+      accessToken: 'YOUR_MAPBOX_ACCESS_TOKEN'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
