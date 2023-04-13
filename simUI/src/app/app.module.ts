@@ -11,6 +11,8 @@ import { DeviceLogsComponent } from './device-logs/device-logs.component';
 import { HealthComponent } from './health/health.component';
 import { DeviceMapComponent } from './device-map/device-map.component';
 
+import { LoginComponent } from './login/login.component';
+
 @NgModule({
   declarations: [
     AppComponent,
