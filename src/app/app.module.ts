@@ -33,7 +33,7 @@ import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
     BrowserAnimationsModule,
     // Add the NgxMapboxGLModule to the imports array
     NgxMapboxGLModule.forRoot({
-      accessToken: 'YOUR_MAPBOX_ACCESS_TOKEN'
+      accessToken: 'pk.eyJ1IjoicHJveGljb24iLCJhIjoiY2xnZm03b2oxMDMxNjNkbXl3ZHhyMHRlaCJ9.aS8c_8_D1foF-65AAze1yg'
     })
   ],
   providers: [],
