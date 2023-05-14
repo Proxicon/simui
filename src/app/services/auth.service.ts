@@ -7,7 +7,9 @@ import { tap } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class AuthService {
+  
   private tokenSubject = new BehaviorSubject<string | null>(null);
+  public isLoggedIn: boolean = false;
   token$: Observable<string | null> = this.tokenSubject.asObservable();
 
   constructor(private http: HttpClient) {}
